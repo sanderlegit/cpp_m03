@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:10 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 13:49:37 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/19 14:11:56 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(void) {
 }
 
 ClapTrap::ClapTrap(std::string name_) : _name(name_) {
-	std::cout << "Welcome to Firestone, I am FR4G-TP, but you may call me by my locally designated name " << _name << "!" << std::endl;
+	std::cout << "I am an original ClapTrap unit, my name is " << _name << "!" << std::endl;
 	srand((int) time(0));
 	return;
 }
