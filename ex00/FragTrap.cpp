@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:10 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 12:41:44 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/19 13:04:02 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ FragTrap &		FragTrap::operator=(FragTrap const & rhs) {
 	_hitPoints = rhs._hitPoints;
 	_maxHitPoints = rhs._maxHitPoints;
 	_energyPoints = rhs._energyPoints;
+	_maxEnergyPoints = rhs._maxEnergyPoints;
 	_level = rhs._level;
 	_meleeAttackDamage = rhs._meleeAttackDamage;
 	_rangedAttackDamage = rhs._rangedAttackDamage;

@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:12 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 12:21:04 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/19 13:03:22 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ class FragTrap {
 		int				_hitPoints = 100;
 		int				_maxHitPoints = 100;
 		int				_energyPoints = 100;
+		int				_maxEnergyPoints = 100;
 		int				_level = 1;
 		std::string		_name;
 		int				_meleeAttackDamage = 30;
-		int				_rangedAttackDamage = 30;
+		int				_rangedAttackDamage = 20;
 		int				_armorDamageReduction = 5;
 		std::string		_dot_exe_attacks[5] =
 							{"(Funzerker) I'm a sexy dinosaur! Rawr!",
