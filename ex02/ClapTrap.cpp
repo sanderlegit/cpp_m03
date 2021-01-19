@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:10 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 14:56:36 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/19 15:21:09 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ void			ClapTrap::meleeAttack(std::string const & target) const {
 	std::cout << "ClapTrap " << _name << " melee attacks " << target << ", causing " << _meleeAttackDamage << " points of damage!" << std::endl;
 }
 void			ClapTrap::takeDamage(unsigned int amount) {
-	amount -= _armorDamageReduction;
+	if ((int)amount > _armorDamageReduction)
+		amount -= _armorDamageReduction;
+	else
+		amount = 0;
 	_hitPoints -= amount;
 	if (_hitPoints < 0)
 		_hitPoints = 0;

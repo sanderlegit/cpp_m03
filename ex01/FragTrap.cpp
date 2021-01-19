@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:10 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 13:04:02 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/19 15:21:17 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ void			FragTrap::meleeAttack(std::string const & target) const {
 	std::cout << "FR4G-TP " << _name << " melee attacks " << target << ", causing " << _meleeAttackDamage << " points of damage!" << std::endl;
 }
 void			FragTrap::takeDamage(unsigned int amount) {
-	amount -= _armorDamageReduction;
+	if ((int)amount > _armorDamageReduction)
+		amount -= _armorDamageReduction;
+	else
+		amount = 0;
 	_hitPoints -= amount;
 	if (_hitPoints < 0)
 		_hitPoints = 0;
