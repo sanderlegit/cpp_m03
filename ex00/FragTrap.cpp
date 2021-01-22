@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:10 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 15:21:22 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/22 16:02:32 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,31 @@ FragTrap::FragTrap(void) {
 	_name = "Nameless";
 	std::cout << "Welcome to Firestone, I am FR4G-TP, but you may call me by my locally designated name " << _name << "!" << std::endl;
 	srand((int) time(0));
+	_setStats();
 	return;
 }
 
 FragTrap::FragTrap(std::string name_) : _name(name_) {
 	std::cout << "Welcome to Firestone, I am FR4G-TP, but you may call me by my locally designated name " << _name << "!" << std::endl;
 	srand((int) time(0));
+	_setStats();
 	return;
+}
+
+void		FragTrap::_setStats() {
+	_hitPoints = 100;
+	_maxHitPoints = 100;
+	_energyPoints = 100;
+	_maxEnergyPoints = 100;
+	_level = 1;
+	_meleeAttackDamage = 30;
+	_rangedAttackDamage = 20;
+	_armorDamageReduction = 5;
+	_dot_exe_attacks[0] = "(Funzerker) I'm a sexy dinosaur! Rawr!";
+	_dot_exe_attacks[1] = "(Meat Unicycle) (unintelligible snarling)";
+	_dot_exe_attacks[2] = "(Gun Wizard) You can call me Gundalf!";
+	_dot_exe_attacks[3] = "(Pirate Ship Mode) Avast ye scurvy dogs!";
+	_dot_exe_attacks[4] = "(Laser Inferno) Boogie time!";
 }
 
 FragTrap::FragTrap(FragTrap const & src) {

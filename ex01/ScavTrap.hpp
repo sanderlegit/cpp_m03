@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:12 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 13:33:13 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/22 16:07:54 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,17 @@ class ScavTrap {
 
 		ScavTrap &		operator=(ScavTrap const & rhs);
 	private:
-		int				_hitPoints = 100;
-		int				_maxHitPoints = 100;
-		int				_energyPoints = 50;
-		int				_maxEnergyPoints = 50;
-		int				_level = 1;
+		void			_setStats();
+		int				_hitPoints;
+		int				_maxHitPoints;
+		int				_energyPoints;
+		int				_maxEnergyPoints;
+		int				_level;
 		std::string		_name;
-		int				_meleeAttackDamage = 20;
-		int				_rangedAttackDamage = 15;
-		int				_armorDamageReduction = 3;
-		std::string		_challenges[5] =
-							{"balance a grenade on your head for a minute!",
-							"throw me all your rarest guns. ;)",
-							"fight the Psycho Midget King!",
-							"duel one of your teammates!",
-							"take on the Vault Guardian. (good luck)"};
+		int				_meleeAttackDamage;
+		int				_rangedAttackDamage;
+		int				_armorDamageReduction;
+		std::string		_challenges[5];
 };
 
 #endif

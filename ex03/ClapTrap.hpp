@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:12 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 14:32:38 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/22 16:14:56 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,16 @@ class ClapTrap {
 
 		ClapTrap &		operator=(ClapTrap const & rhs);
 	protected:
-		int				_hitPoints = 100;
-		int				_maxHitPoints = 100;
-		int				_energyPoints = 100;
-		int				_maxEnergyPoints = 100;
-		int				_level = 1;
+		void			_setStats();
+		int				_hitPoints;
+		int				_maxHitPoints;
+		int				_energyPoints;
+		int				_maxEnergyPoints;
+		int				_level;
 		std::string		_name;
-		int				_meleeAttackDamage = 30;
-		int				_rangedAttackDamage = 20;
-		int				_armorDamageReduction = 5;
+		int				_meleeAttackDamage;
+		int				_rangedAttackDamage;
+		int				_armorDamageReduction;
 };
 
 #endif

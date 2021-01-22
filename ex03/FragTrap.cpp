@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:10 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 14:56:31 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/22 16:16:16 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ FragTrap::FragTrap(void) {
 	ClapTrap::_name = "Nameless";
 	std::cout << "Welcome to Firestone, I am FR4G-TP, but you may call me by my locally designated name " << ClapTrap::_name << "!" << std::endl;
 	srand((int) time(0));
+	_setStats();
 	return;
 }
 
 FragTrap::FragTrap(std::string name_) : ClapTrap(name_) {
 	std::cout << "Welcome to Firestone, I am FR4G-TP, but you may call me by my locally designated name " << ClapTrap::_name << "!" << std::endl;
 	srand((int) time(0));
+	_setStats();
 	return;
 }
 
@@ -35,6 +37,23 @@ FragTrap::~FragTrap(void) {
 	std::cout << "FR4G-TP " << ClapTrap::_name << ": Argh arghargh death gurgle gurglegurgle urgh... death." << std::endl;
 	return;
 }
+
+void			FragTrap::_setStats() {
+	_hitPoints = 100;
+	_maxHitPoints = 100;
+	_energyPoints = 100;
+	_maxEnergyPoints = 100;
+	_level = 1;
+	_meleeAttackDamage = 30;
+	_rangedAttackDamage = 20;
+	_armorDamageReduction = 5;
+	_dot_exe_attacks[0] = "(Funzerker) I'm a sexy dinosaur! Rawr!";
+	_dot_exe_attacks[1] = "(Meat Unicycle) (unintelligible snarling)";
+	_dot_exe_attacks[2] = "(Gun Wizard) You can call me Gundalf!";
+	_dot_exe_attacks[3] = "(Pirate Ship Mode) Avast ye scurvy dogs!";
+	_dot_exe_attacks[4] = "(Laser Inferno) Boogie time!";
+}
+
 
 void			FragTrap::vaulthunter_dot_exe(std::string const & target) {
 	if (ClapTrap::_energyPoints >= 25) {

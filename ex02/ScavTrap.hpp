@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:12 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 14:52:31 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/22 16:10:52 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,7 @@ class ScavTrap : public ClapTrap {
 		ScavTrap &		operator=(ScavTrap const & rhs);
 	private:
 		void			_setStats();
-		std::string		_challenges[5] =
-							{"balance a grenade on your head for a minute!",
-							"throw me all your rarest guns. ;)",
-							"fight the Psycho Midget King!",
-							"duel one of your teammates!",
-							"take on the Vault Guardian. (good luck)"};
+		std::string		_challenges[5];
 };
 
 #endif

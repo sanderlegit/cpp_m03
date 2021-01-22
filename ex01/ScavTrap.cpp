@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:10 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 15:21:13 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/22 16:16:19 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ ScavTrap::ScavTrap(void) {
 	_name = "Nameless";
 	std::cout << "I AM " << _name << ", SCCCAAAAAAVV(trap)S RULLEEEE!!" << std::endl;
 	srand((int) time(0));
+	_setStats();
 	return;
 }
 
 ScavTrap::ScavTrap(std::string name_) : _name(name_) {
 	std::cout << "I AM " << _name << ", SCCCAAAAAAVV(trap)S RULLEEEE!!" << std::endl;
 	srand((int) time(0));
+	_setStats();
 	return;
 }
 
@@ -36,12 +38,30 @@ ScavTrap::~ScavTrap(void) {
 	return;
 }
 
+void			ScavTrap::_setStats() {
+	_hitPoints = 100;
+	_maxHitPoints = 100;
+	_energyPoints = 50;
+	_maxEnergyPoints = 50;
+	_level = 1;
+	_meleeAttackDamage = 20;
+	_rangedAttackDamage = 15;
+	_armorDamageReduction = 3;
+	_challenges[0] = "balance a grenade on your head for a minute!";
+	_challenges[1] = "throw me all your rarest guns. ;)";
+	_challenges[2] = "fight the Psycho Midget King!";
+	_challenges[3] = "duel one of your teammates!";
+	_challenges[4] = "take on the Vault Guardian. (good luck)";
+}
+
 void			ScavTrap::rangedAttack(std::string const & target) const {
 	std::cout << "ScavTrap " << _name << " attacks " << target << " at range, causing " << _rangedAttackDamage << " points of damage!" << std::endl;
 }
+
 void			ScavTrap::meleeAttack(std::string const & target) const {
 	std::cout << "ScavTrap " << _name << " melee attacks " << target << ", causing " << _meleeAttackDamage << " points of damage!" << std::endl;
 }
+
 void			ScavTrap::takeDamage(unsigned int amount) {
 	if ((int)amount > _armorDamageReduction)
 		amount -= _armorDamageReduction;
@@ -52,6 +72,7 @@ void			ScavTrap::takeDamage(unsigned int amount) {
 		_hitPoints = 0;
 	std::cout << "ScavTrap " << _name << " takes " << amount << " damage, causing it's health to drop to " << _hitPoints << "/" << _maxHitPoints << "!" << std::endl;
 }
+
 void			ScavTrap::beRepaired(unsigned int amount) {
 	_hitPoints += amount;
 	if (_hitPoints > _maxHitPoints)

@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:12 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 14:57:10 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/22 16:13:09 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,8 @@ class FragTrap : public ClapTrap{
 
 		FragTrap &		operator=(FragTrap const & rhs);
 	private:
-		std::string		_dot_exe_attacks[5] =
-							{"(Funzerker) I'm a sexy dinosaur! Rawr!",
-							"(Meat Unicycle) (unintelligible snarling)",
-							"(Gun Wizard) You can call me Gundalf!",
-							"(Pirate Ship Mode) Avast ye scurvy dogs!",
-							"(Laser Inferno) Boogie time!"};
+		void			_setStats();
+		std::string		_dot_exe_attacks[5];
 };
 
 #endif
