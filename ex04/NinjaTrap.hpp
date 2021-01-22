@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:12 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 15:53:44 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/19 15:10:26 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,6 @@ class NinjaTrap : virtual public ClapTrap {
 		void			ninjaShoebox(NinjaTrap & target);
 
 		NinjaTrap &		operator=(NinjaTrap const & rhs);
-	protected:
-		int				_hitPoints = 60;
-		int				_maxHitPoints = 60;
-		int				_energyPoints = 120;
-		int				_maxEnergyPoints = 120;
-		int				_level = 1;
-		int				_meleeAttackDamage = 60;
-		int				_rangedAttackDamage = 5;
-		int				_armorDamageReduction = 0;
 	private:
 		void			_setStats();
 };
