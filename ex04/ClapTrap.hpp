@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:12 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/22 16:14:56 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/22 17:02:50 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ClapTrap {
 		ClapTrap(void);
 		ClapTrap(std::string name_);
 		ClapTrap(ClapTrap const & src);
-		~ClapTrap(void);
+		virtual ~ClapTrap(void);
 
 		void			rangedAttack(std::string const & target) const;
 		void			meleeAttack(std::string const & target) const;

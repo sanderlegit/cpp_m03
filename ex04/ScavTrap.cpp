@@ -6,22 +6,22 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:10 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/22 16:11:29 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/22 16:44:54 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void) {
-	ClapTrap::_name = "Nameless";
-	std::cout << "I AM " << ClapTrap::_name << ", SCCCAAAAAAVV(trap)S RULLEEEE!!" << std::endl;
+	_name = "Nameless";
+	std::cout << "I AM " << _name << ", SCCCAAAAAAVV(trap)S RULLEEEE!!" << std::endl;
 	srand((int) time(0));
 	_setStats();
 	return;
 }
 
 ScavTrap::ScavTrap(std::string name_) : ClapTrap(name_) {
-	std::cout << "I AM " << ClapTrap::_name << ", SCCCAAAAAAVV(trap)S RULLEEEE!!" << std::endl;
+	std::cout << "I AM " << _name << ", SCCCAAAAAAVV(trap)S RULLEEEE!!" << std::endl;
 	srand((int) time(0));
 	_setStats();
 	return;
@@ -34,7 +34,7 @@ ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src) {
 }
 
 ScavTrap::~ScavTrap(void) {
-	std::cout << "ScavTrap " << ClapTrap::_name << ": THE LIGHTS, NOOOO MOOMMYYY" << std::endl;
+	std::cout << "ScavTrap " << _name << ": THE LIGHTS, NOOOO MOOMMYYY" << std::endl;
 	return;
 }
 
@@ -55,19 +55,19 @@ void			ScavTrap::_setStats() {
 }
 
 void			ScavTrap::challengeNewcomer(std::string const & target) {
-	std::cout << "ScavTrap " << ClapTrap::_name << " challenges the newcomer " << target << " to " << _challenges[(rand() % 5)] << std::endl;
+	std::cout << "ScavTrap " << _name << " challenges the newcomer " << target << " to " << _challenges[(rand() % 5)] << std::endl;
 }
 
 ScavTrap &		ScavTrap::operator=(ScavTrap const & rhs) {
-	ClapTrap::_name = rhs._name;
-	ClapTrap::_hitPoints = rhs._hitPoints;
-	ClapTrap::_maxHitPoints = rhs._maxHitPoints;
-	ClapTrap::_energyPoints = rhs._energyPoints;
-	ClapTrap::_maxEnergyPoints = rhs._maxEnergyPoints;
-	ClapTrap::_level = rhs._level;
-	ClapTrap::_meleeAttackDamage = rhs._meleeAttackDamage;
-	ClapTrap::_rangedAttackDamage = rhs._rangedAttackDamage;
-	ClapTrap::_armorDamageReduction = rhs._armorDamageReduction;
-	std::cout << "I AM A COPY OF " << ClapTrap::_name << ", SCCCAAAAAAVVS RULLEEEE!!" << std::endl;
+	_name = rhs._name;
+	_hitPoints = rhs._hitPoints;
+	_maxHitPoints = rhs._maxHitPoints;
+	_energyPoints = rhs._energyPoints;
+	_maxEnergyPoints = rhs._maxEnergyPoints;
+	_level = rhs._level;
+	_meleeAttackDamage = rhs._meleeAttackDamage;
+	_rangedAttackDamage = rhs._rangedAttackDamage;
+	_armorDamageReduction = rhs._armorDamageReduction;
+	std::cout << "I AM A COPY OF " << _name << ", SCCCAAAAAAVVS RULLEEEE!!" << std::endl;
 	return *this;
 }

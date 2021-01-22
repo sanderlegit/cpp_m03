@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:12 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/22 16:13:09 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/22 17:02:33 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ class FragTrap : virtual public ClapTrap{
 		FragTrap(void);
 		FragTrap(std::string name_);
 		FragTrap(FragTrap const & src);
-		~FragTrap(void);
+		virtual ~FragTrap(void);
 
 		void			vaulthunter_dot_exe(std::string const & target);
 
 		FragTrap &		operator=(FragTrap const & rhs);
-	private:
+	protected:
 		void			_setStats();
 		std::string		_dot_exe_attacks[5];
 };

@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/19 11:03:12 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 15:39:11 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/22 17:06:11 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include "NinjaTrap.hpp"
 # include "FragTrap.hpp"
 
-class SuperTrap : public FragTrap, public NinjaTrap {
+class SuperTrap : virtual public FragTrap, virtual public NinjaTrap {
 	public:
 		SuperTrap(void);
 		SuperTrap(std::string name_);
